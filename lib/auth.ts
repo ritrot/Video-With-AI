@@ -26,7 +26,7 @@ export const authOptions: AuthOptions = {
                         user.password,
                     )
                     console.log(valid);
-                    
+
                     if (!valid) {
                         throw new Error("Invalid Password.")
                     }
@@ -54,6 +54,10 @@ export const authOptions: AuthOptions = {
             }
             return session;
         }
+    },
+    pages: {
+        signIn: "/login",
+        error: "/login",
     },
     session: {
         strategy: "jwt",

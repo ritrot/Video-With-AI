@@ -25,7 +25,7 @@ const VideoSchema = new Schema<IVideo> (
         description:{type:String , required:true},
         videoUrl:{type:String , required:true},
         thumbnailUrl:{type:String , required:true},
-        controles:{type:String , required:true},
+        controles:{type:Boolean , required:true},
         transformation:{
             height:{type:Number , default:VIDEO_DIMENTIONS.height},
             width:{type:Number , default:VIDEO_DIMENTIONS.width},

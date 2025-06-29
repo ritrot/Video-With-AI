@@ -16,7 +16,7 @@ export async function connectTodb() {
         return cached.conn;
     }
 
-    if (!cached.promise) {
+    if (!cached?.promise) {
         mongoose
             .connect(uri)
             .then(() => mongoose.connection)

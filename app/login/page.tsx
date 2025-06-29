@@ -14,7 +14,7 @@ const page = () => {
     const res = await signIn('credentials', {
       email: email,
       password: password,
-      redirect: false
+      redirect: false,
     })
     if (res?.error) {
       setError(res.error);

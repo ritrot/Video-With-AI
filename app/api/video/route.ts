@@ -39,13 +39,13 @@ export async function POST(request: NextRequest) {
         }
         const connect = await connectTodb();
         const video: IVideo = await request.json();
-
+        console.log("video" , video);
+        
         if (!video.description || !video.title || !video.thumbnailUrl ||!video.videoUrl) {
             return NextResponse.json(
                 { error: " all fields required" }
             )
         }
-
         const videoData = {
             ...video,
             controls: video?.controles ?? true,
@@ -55,6 +55,9 @@ export async function POST(request: NextRequest) {
                 quality: video.transformation?.quality ?? 100,
             },
         }
+        console.log(videoData);
+        
+        
         const newVideo = await Video.create(videoData);
         return NextResponse.json(
             { newVideo },
